@@ -13,6 +13,7 @@
   text-shadow: 0 0 5px #c8c8c8;
 }
 
+/* https://css-tricks.com/old-timey-terminal-styling/ */
 .app::after {
   content: "";
   position: absolute;
