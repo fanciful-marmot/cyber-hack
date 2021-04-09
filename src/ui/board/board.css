@@ -1,0 +1,24 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #c4c4c4;
+  clip-path: polygon(15px 0, 100% 0, 100% 100%, 0 100%, 0 15px);
+}
+
+.board-header {
+  background: #c4c4c4;
+  color: #051937;
+  font-size: 1.2rem;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.cell-matrix {
+  flex-grow: 1;
+
+  display: grid;
+  padding: 20px;
+
+  user-select: none;
+}
+
