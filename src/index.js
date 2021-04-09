@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { App } from './ui/app';
 
+import './variables.css';
 import './index.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));

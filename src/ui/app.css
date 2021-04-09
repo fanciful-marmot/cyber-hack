@@ -1,4 +1,4 @@
-.app {  
+.app {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -8,9 +8,9 @@
   align-items: center;
   justify-content: center;
 
-  color: white;
+  color: var(--text-light);
   font: 1.5rem Inconsolata, monospace;
-  text-shadow: 0 0 5px #c8c8c8;
+  text-shadow: 0 0 5px var(--text-light);
 }
 
 /* https://css-tricks.com/old-timey-terminal-styling/ */

@@ -1,0 +1,6 @@
+:root {
+  --background: radial-gradient(circle, #051937, #003051, #00475a, #005c4d, #006f30);
+  --text-dark: #051937;
+  --text-light: #ffffff;
+  --background-light: #eeeeee;
+}
