@@ -22,3 +22,16 @@
   user-select: none;
 }
 
+.board-cell.hover-row {
+  background-color: rgba(155, 209, 153, 0.2);
+}
+
+.board-cell.hover-column {
+  background-color: rgba(13, 226, 6, 0.2);
+}
+
+.board-cell.hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
