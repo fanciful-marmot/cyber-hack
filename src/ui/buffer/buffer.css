@@ -1,0 +1,28 @@
+.buffer {
+  border: 2px solid var(--background-light);
+
+  padding: 5px 10px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.buffer-cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  margin: 4px;
+
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid var(--background-light);
+}
+
+.buffer-cell.unfilled {
+  opacity: 0.7;
+  text-shadow: none;
+  border: 2px dashed var(--background-light);
+}

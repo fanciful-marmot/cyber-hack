@@ -7,7 +7,6 @@
 
 .board-header {
   background: var(--background-light);
-  color: var(--text-dark);
   font-size: 1.2rem;
   padding: 5px;
   padding-left: 10px;
@@ -33,5 +32,9 @@
 .board-cell.hover {
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.board-cell.selected {
+  border: 2px solid var(--background-light);
 }
 

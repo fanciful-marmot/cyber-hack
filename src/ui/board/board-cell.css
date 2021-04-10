@@ -1,6 +1,6 @@
 .board-cell {
-  width: 40px;
-  height: 40px;
+  width: var(--cell-size);
+  height: var(--cell-size);
 
   display: flex;
   align-items: center;

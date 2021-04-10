@@ -4,6 +4,8 @@
   --text-light: #ffffff;
   --background-light: #eeeeee;
 
+  --cell-size: 40px;
+
   --button-hover: #cccccc;
   --button-active: #aaaaaa;
 }

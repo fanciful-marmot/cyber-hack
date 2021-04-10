@@ -1,5 +1,7 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { cellSelectAction } from '../../store/actions';
 import { BoardCell } from './board-cell';
 
 import './board.css';
@@ -13,6 +15,9 @@ const Board = (props) => {
   };
 
   const [selectedCell, setSelectedCell] = useState(null);
+
+  const filledCells = useSelector(state => state.buffer.filledCells);
+  const dispatch = useDispatch();
 
   return (
     <div className="board">
@@ -29,7 +34,9 @@ const Board = (props) => {
                 'hover-row': selectedCell != null && i % height === selectedCell % height,
                 'hover-column': selectedCell != null && Math.floor(i / width) === Math.floor(selectedCell / width),
                 hover: i === selectedCell,
+                selected: filledCells.includes(i),
               })}
+              onClick={() => dispatch(cellSelectAction(i))}
               onMouseEnter={() => setSelectedCell(i)}
               onMouseLeave={() => setSelectedCell(null)}
             />

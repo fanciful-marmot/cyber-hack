@@ -9,6 +9,13 @@ const rootReducer = produce((draft, action) => {
       draft.buffer.filledCells = [];
       break;
 
+    case 'cell/select':
+      const { filledCells, size } = draft.buffer;
+      if (filledCells.length < size && !filledCells.includes(action.cellId)) {
+        filledCells.push(action.cellId);
+      }
+      break;
+
     default:
       console.warn(`Unhandled action of type ${action.type}`);
       break;
