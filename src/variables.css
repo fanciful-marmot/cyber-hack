@@ -3,4 +3,7 @@
   --text-dark: #051937;
   --text-light: #ffffff;
   --background-light: #eeeeee;
+
+  --button-hover: #cccccc;
+  --button-active: #aaaaaa;
 }

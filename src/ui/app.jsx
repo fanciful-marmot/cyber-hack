@@ -1,24 +1,25 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { Board } from './board/board';
+import { Button } from './button/button';
+import { newPuzzleAction } from '../store/actions';
 
 import './app.css';
-import { Board } from './board/board';
-
-const matrix = [
-  'BD', '1C', 'BD', 'BD', 'BD', '1C',
-  '1C', '55', '55', '55', 'E9', '1C',
-  'E9', '1C', 'BD', 'E9', 'BD', 'E9',
-  'BD', '55', '1C', 'E9', '1C', '1C',
-  '55', '1C', '55', '1C', 'BD', '7A',
-  '55', 'BD', '7A', 'E9', '55', '1C',
-];
-
-const width = 6;
-const height = 6;
 
 const App = () => {
+  const { matrix, width, height } = useSelector(state => state.puzzle);
+  const dispatch = useDispatch();
+
+
   return (
     <div className="app">
-      <Board matrix={matrix} width={width} height={height} />
+      <div className="puzzle-container">
+        <Board matrix={matrix} width={width} height={height} />
+      </div>
+      <div className="info-container">
+        <Button onClick={() => dispatch(newPuzzleAction(width, height))}>NEW</Button>
+      </div>
     </div>
   );
 };

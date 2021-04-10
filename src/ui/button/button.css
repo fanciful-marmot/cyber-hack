@@ -1,0 +1,15 @@
+.button {
+  font-size: 1.2rem;
+  background: var(--background-light);
+  padding: 5px 20px;
+
+  user-select: none;
+}
+
+.button:hover {
+  background: var(--button-hover);
+}
+
+.button:active {
+  background: var(--button-active);
+}

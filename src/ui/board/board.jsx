@@ -16,7 +16,7 @@ const Board = (props) => {
 
   return (
     <div className="board">
-      <div className="board-header">
+      <div className="board-header text-dark">
         CODE MATRIX
       </div>
       <div className="cell-matrix" style={matrixStyle}>
