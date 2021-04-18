@@ -1,4 +1,4 @@
-import { generateMatrix } from "../core/generateMatrix";
+import { generateMatrix, generateSequences } from '../core/puzzle-generators';
 
 const newPuzzleAction = (width, height) => ({
   type: 'puzzle/new',
@@ -6,6 +6,8 @@ const newPuzzleAction = (width, height) => ({
     matrix: generateMatrix(width, height),
     width,
     height,
+    sequences: generateSequences([2, 3, 4]),
+    inputRowOrColumn: { type: 'row', index: 0 },
   },
 });
 

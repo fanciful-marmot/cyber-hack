@@ -1,0 +1,11 @@
+.sequences {
+  border: 2px solid var(--background-light);
+  clip-path: polygon(15px 0, 100% 0, 100% 100%, 0 100%, 0 15px)
+}
+
+.sequences-header {
+  background: var(--background-light);
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  padding: 5px 10px;;
+}

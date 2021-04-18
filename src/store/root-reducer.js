@@ -8,7 +8,6 @@ const rootReducer = produce((draft, action) => {
     case 'puzzle/new':
       draft.puzzle = action.puzzle;
       draft.buffer.filledCells = [];
-      draft.puzzle.inputRowOrColumn = { type: 'row', index: 0 };
       break;
 
     case 'cell/select':

@@ -1,4 +1,4 @@
-import { generateMatrix } from "../core/generateMatrix";
+import { generateMatrix, generateSequences } from '../core/puzzle-generators';
 
 const width = 6;
 const height = 6;
@@ -8,6 +8,7 @@ const initialState = {
     matrix: generateMatrix(width, height),
     width,
     height,
+    sequences: generateSequences([2, 3, 4]),
     inputRowOrColumn: { type: 'row', index: 0 },
   },
   buffer: {

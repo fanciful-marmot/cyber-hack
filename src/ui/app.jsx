@@ -7,10 +7,11 @@ import { Buffer } from './buffer/buffer';
 import { newPuzzleAction } from '../store/actions';
 
 import './app.css';
+import { Sequences } from './sequences/sequences';
 
 const App = () => {
   const puzzle = useSelector(state => state.puzzle);
-  const { width, height } = puzzle;
+  const { width, height, sequences } = puzzle;
   const dispatch = useDispatch();
 
 
@@ -21,6 +22,7 @@ const App = () => {
       </div>
       <div className="info-container">
         <Buffer />
+        <Sequences sequences={sequences} />
         <Button onClick={() => dispatch(newPuzzleAction(width, height))}>NEW</Button>
       </div>
     </div>
