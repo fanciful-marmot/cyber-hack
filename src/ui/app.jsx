@@ -9,14 +9,15 @@ import { newPuzzleAction } from '../store/actions';
 import './app.css';
 
 const App = () => {
-  const { matrix, width, height } = useSelector(state => state.puzzle);
+  const puzzle = useSelector(state => state.puzzle);
+  const { width, height } = puzzle;
   const dispatch = useDispatch();
 
 
   return (
     <div className="app">
       <div className="puzzle-container">
-        <Board matrix={matrix} width={width} height={height} />
+        <Board puzzle={puzzle} />
       </div>
       <div className="info-container">
         <Buffer />

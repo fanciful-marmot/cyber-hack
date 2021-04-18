@@ -8,6 +8,7 @@ const initialState = {
     matrix: generateMatrix(width, height),
     width,
     height,
+    inputRowOrColumn: { type: 'row', index: 0 },
   },
   buffer: {
     size: 4,
