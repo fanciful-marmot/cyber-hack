@@ -4,23 +4,30 @@ import { Sequence } from './sequence';
 
 import './sequences.css';
 
+// Return the number of positions in the sequence that have been filled
+// while it's still possible to complete the sequence.
+// For example, the sequence 1C 55 BD in the fill 7A 1C 55 would return 2 and
+// the sequence 1C 55 BD in the fill 7A 1C 55 1C would return 1
 const getFilledlength = (sequence, filledCells, matrix) => {
-  let count = 0;
-  let maxCount = 0;
+  const fillString = filledCells
+    .map(cellId => matrix[cellId])
+    .join('');
 
-  for (let fillId of filledCells) {
-    const fillValue = matrix[fillId];
-    const sequenceValue = sequence[count];
+  const sequenceString = sequence.join('');
 
-    if (fillValue === sequenceValue) {
-      count += 1;
-    } else {
-      maxCount = Math.max(count, maxCount);
-      count = 0;
+  // Is the sequence finished?
+  if (fillString.includes(sequenceString)) {
+    return sequence.length;
+  }
+
+  // At best, some subset of the sequence is at the end fo the fill
+  for (let i = sequence.length - 1; i > 0; i--) {
+    if (fillString.endsWith(sequenceString.substr(0, i * 2))) {
+      return i;
     }
   }
 
-  return Math.max(count, maxCount);
+  return 0;
 };
 
 const Sequences = props => {
