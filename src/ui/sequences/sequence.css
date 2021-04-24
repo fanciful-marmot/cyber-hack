@@ -2,3 +2,11 @@
   display: flex;
   flex-direction: row;
 }
+
+.sequence .board-cell {
+  opacity: 0.5;
+}
+
+.sequence .board-cell.filled {
+  opacity: 1;
+}

@@ -12,7 +12,7 @@ const initialState = {
     inputRowOrColumn: { type: 'row', index: 0 },
   },
   buffer: {
-    size: 4,
+    size: 5,
     filledCells: [], // Cell IDs
   },
 };
