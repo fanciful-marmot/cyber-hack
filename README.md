@@ -1,4 +1,4 @@
-# Cyber Hack
+# 2077
 Replica of Cyberpunk 2077 hacking minigame. Still a work in progress
 
 Just a little project with React.js and Redux.
