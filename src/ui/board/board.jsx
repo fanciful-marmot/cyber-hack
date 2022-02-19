@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { cellSelectAction } from '../../store/actions';
 import { getRowAndColumn } from '../../utils/utils';
@@ -11,9 +11,11 @@ const Board = (props) => {
   const { puzzle } = props;
   const { matrix, width, height, inputRowOrColumn } = puzzle;
 
+  const isGameOver = useSelector(state => state.buffer.size === state.buffer.filledCells.length)
   const matrixStyle = {
     gridTemplateRows: '1fr '.repeat(height),
     gridTemplateColumns: '1fr '.repeat(width),
+    pointerEvents: isGameOver ? 'none' : 'initial',
   };
 
   const [hoverCell, setHoverCell] = useState(null);
@@ -22,6 +24,10 @@ const Board = (props) => {
   const dispatch = useDispatch();
 
   const isInputCell = useCallback(i => {
+    if (isGameOver) {
+      return false;
+    }
+
     const { type, index } = inputRowOrColumn;
     const { row, column } = getRowAndColumn(i, width);
     switch (type) {
@@ -36,7 +42,7 @@ const Board = (props) => {
       default:
         throw new Error(`Unknown input row/column type ${type}`);
     }
-  }, [inputRowOrColumn, width]);
+  }, [inputRowOrColumn, width, isGameOver]);
 
   return (
     <div className="board">
